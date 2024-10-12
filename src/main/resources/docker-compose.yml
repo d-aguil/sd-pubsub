@@ -1,0 +1,16 @@
+## estacion.mqtt
+services:
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    network_mode: host
+    environment:
+      - TZ=America/Argentina/Ushuaia   
+        #    volumes:
+        #- /tmp/mosquitto/config:/mosquitto/config
+        #- /tmp/mosquitto/data:/mosquitto/data
+        #- /tmp/mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
+    restart: unless-stopped
